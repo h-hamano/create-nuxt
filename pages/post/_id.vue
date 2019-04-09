@@ -28,7 +28,7 @@ export default {
     'postdetail': PostDetail
   },
   async asyncData({ store, params }) {
-    const jsonData = store.getters['post/getPosts'];
+    const jsonData = await store.getters['post/getPosts'];
     let prevPage, nextPage;
 
     const data = jsonData.filter(function(item) {

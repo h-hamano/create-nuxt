@@ -4,6 +4,8 @@
       :data="data"
     />
 
+    {{items}}
+
     <div class="singlePager">
       <NuxtLink v-if="prevPage" :to="`/post/${prevPage.id}`" class="singlePager_node">
         &lt; Prev
@@ -15,13 +17,13 @@
       <div v-else class="singlePager_node"></div>
     </div>
 
-
     <nuxt-link to="/" class="c-button">トップページへ戻る</nuxt-link>
   </div>
 </template>
 
 <script>
 import PostDetail from '~/components/PostDetail'
+
 export default {
   layout: 'post',
   components: {
@@ -30,7 +32,6 @@ export default {
   async asyncData({ store, params }) {
     const jsonData = await store.getters['post/getPosts'];
     let prevPage, nextPage;
-
     const data = jsonData.filter(function(item) {
       return (item.id == params.id);
     })

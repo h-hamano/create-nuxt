@@ -820,7 +820,7 @@ body.headerOpen .header_nav {
     left: 0;
     right: 0;
     margin: auto;
-    background-image: url(../svg/arrow_top.svg);
+    background-image: url(/assets/svg/arrow_top.svg);
     background-repeat: no-repeat;
     background-size: 15px auto;
     background-position: center; }
